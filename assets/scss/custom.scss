@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+
+$blue: #00a7bd;
+$darkblue: #0b6f78;
+$yellow: #fed000;
+$grey: #e7e7e7;
+$darkgrey: #707070;
+$white: #fff;
+$black: #1d1d1b;
+$gradient: linear-gradient(
+  to right,
+  #0b6f78,
+  #097d88,
+  #068b99,
+  #0399ab,
+  #00a7bd
+);
+
+$shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+$border: 10px;
+
+@import "bootstrap/scss/bootstrap.scss";
+@import "bootstrap-vue/src/index.scss";
+
+.navbar {
+  z-index: 99;
+  background-color: $darkblue;
+}
+body {
+  font-family: "Open+Sans", sans-serif;
+  font-weight: 400;
+}
+b {
+  font-weight: 700;
+}
+
+header {
+  background-color: $blue;
+  color: $white;
+  padding-top: 20px;
+  padding-bottom: 64px;
+}
+main {
+  margin-top: -45px;
+  border-top-left-radius: 25px;
+  background-color: $white;
+  min-height: 100px;
+  padding-top: 20px;
+}
+
+.card {
+  border-radius: $border;
+  overflow: hidden;
+  box-shadow: $shadow !important;
+}
+
+.card-header {
+  background-color: $darkblue;
+  color: $white;
+  text-align: center;
+  padding: 0.3em 1em;
+}
+
+// switch
+
+.custom-switch.b-custom-control-lg::before {
+  font-size: 12px !important;
+}
+.custom-switch.b-custom-control-lg .custom-control-label::before,
+.input-group-lg .custom-switch .custom-control-label::before {
+  top: 0.313rem;
+  height: 2.6rem;
+  left: -2.812rem;
+  width: 5.5rem;
+  border-radius: 2rem;
+  background-color: $grey;
+  border-color: transparent;
+  content: "No";
+  padding: 8px 4px 4px 44px;
+  font-size: 16px !important;
+  text-align: left;
+}
+
+// switch -- active
+.custom-switch.b-custom-control-lg
+  .custom-control-input:checked
+  ~ .custom-control-label::before,
+.input-group-lg
+  .custom-switch
+  .custom-control-input:checked
+  ~ .custom-control-label::before {
+  top: 0.313rem;
+  height: 2.6rem;
+  left: -2.812rem;
+  width: 5.5rem;
+  border-radius: 2rem;
+  background-color: $blue;
+  border-color: transparent;
+  content: "Yes";
+  padding-left: 4px;
+  font-size: 16px !important;
+  text-align: left;
+  padding: 8px 4px 4px 13px;
+}
+
+// switch knob - inactive
+.custom-switch.b-custom-control-lg .custom-control-label::after,
+.input-group-lg .custom-switch .custom-control-label::after {
+  top: calc(0.3125rem + 6px);
+  left: calc(-2.8125rem + 6px);
+  width: calc(2rem - 4px);
+  height: calc(2rem - 4px);
+  border-radius: 1.625rem;
+  background-size: 50% 50%;
+  background-color: $white;
+  box-shadow: $shadow;
+  text-align: left;
+}
+
+// switch knob - active
+.custom-switch.b-custom-control-lg
+  .custom-control-input:checked
+  ~ .custom-control-label::after,
+.input-group-lg
+  .custom-switch
+  .custom-control-input:checked
+  ~ .custom-control-label::after {
+  transform: translateX(2.938rem);
+}
+
+.custom-switch {
+  padding-right: 2.75rem !important;
+}
+
+.custom-control-label {
+  @media screen and (min-width: 505px) {
+    margin-top: -16px !important;
+  }
+}
+
+.btn {
+  padding: 0.8em 0.5em;
+}
+
+.btn-primary {
+  color: $white;
+  background-color: $blue;
+  border-color: $blue;
+}
+
+.btn-primary:hover {
+  color: $white;
+  background-color: $darkblue;
+  border-color: $darkblue;
+}
+
+.btn-accent {
+  color: $black;
+  background-color: $yellow;
+  border-color: $yellow;
+}
+
+.btn-accent:hover {
+
+}
+
+
+
+
+
+.btn-secondary {
+  color: $black;
+  background-color: $grey;
+  border-color: $grey;
+}
+
+.btn-secondary:hover {
+  color: $white;
+  background-color: $black;
+  border-color: $black;
+}
+
+.bg-light{
+  background-color: $grey !important;
+}
