@@ -14,7 +14,7 @@ export default {
   css: ['@/assets/scss/custom.scss'],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: [],
+  plugins: [{ src: '~/plugins/filebase.js', mode: 'client' }], // only on client side],
 
   module: {
     rules: [
@@ -29,7 +29,7 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
-  buildModules: [],
+  buildModules: ["@nuxtjs/svg"],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [

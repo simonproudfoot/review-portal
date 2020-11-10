@@ -29,6 +29,7 @@ $border: 10px;
 body {
   font-family: "Open+Sans", sans-serif;
   font-weight: 400;
+  line-height: 1.2em;
 }
 b {
   font-weight: 700;
@@ -182,4 +183,16 @@ main {
 
 .bg-light{
   background-color: $grey !important;
+}
+
+
+.hide-scrollbar {
+  /*FireFox*/
+  scrollbar-width: none;
+  /*IE10+*/
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  /*Chrome, Safari, Edge*/
+  display: none;
 }

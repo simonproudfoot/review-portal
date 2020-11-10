@@ -1,6 +1,6 @@
 export const strict = false;
 export const state = () => ({
-  page: "details",
+  page: "home",
   prevent: false,
   client: {
     reference: "500774 (R1779)",
@@ -48,7 +48,17 @@ export const state = () => ({
         uploaded: "2020-07-03"
       }
     ]
-  }
+  },
+  chat: [
+    {
+      creator: "user",
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,"
+    },
+    {
+      creator: "agent",
+      message: "Sed ut perspiciatis unde omnis iste natus error"
+    }
+  ]
 });
 export const getters = {
   page(state) {
@@ -65,6 +75,9 @@ export const getters = {
   },
   documents(state) {
     return state.documents;
+  },
+  chat(state) {
+    return state.chat;
   }
 };
 export const mutations = {
@@ -81,5 +94,8 @@ export const mutations = {
   },
   set_documents(state, val) {
     state.documents = val;
+  },
+  set_chat(state, val) {
+    state.chat.push(val);
   }
 };

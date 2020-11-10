@@ -14,7 +14,11 @@
     "core-js": "^3.6.5",
     "node-sass": "^5.0.0",
     "nuxt": "^2.14.6",
-    "sass-loader": "^10.0.5"
+    "sass-loader": "^10.0.5",
+    "vue-svg-transition": "^0.2.1",
+    "vue-upload-component": "^2.8.20"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@nuxtjs/svg": "^0.1.12"
+  }
 }

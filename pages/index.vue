@@ -4,6 +4,7 @@
         <home-screen v-if="$store.getters.page == 'home'"></home-screen>
         <details-screen v-if="$store.getters.page == 'details'"></details-screen>
         <documents-screen v-if="$store.getters.page == 'documents'"></documents-screen>
+        <chat-screen v-if="$store.getters.page == 'chat'"></chat-screen>
     </transition>
     <footer-menu></footer-menu>
 </div>
@@ -26,7 +27,7 @@
 
 .slide-up-enter,
 .slide-up-leave-to {
-    transform: translateY(-10px);
+
     opacity: 0;
 }
 </style>
