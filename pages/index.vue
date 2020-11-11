@@ -1,5 +1,5 @@
 <template>
-<div class="mainWrapper">
+<div class="mainWrapper">    
     <transition mode="out-in" name="slide-up">
         <home-screen v-if="$store.getters.page == 'home'"></home-screen>
         <details-screen v-if="$store.getters.page == 'details'"></details-screen>
@@ -10,11 +10,29 @@
 </div>
 </template>
 
-<style lang="scss">
+<script>
+export default {
+    async asyncData({
+        $axios,
+        store
+    }) {
+        try {
+            const data = await $axios.$get('http://localhost/www.reviewportal.co.uk/api/test_ls.php')
+            store.dispatch('updateUserData', data)
+        }
+        catch (err) {
+            console.log(err)
+        }
+    }
 
-.footer{
+}
+</script>
+
+<style lang="scss">
+.footer {
     z-index: 100;
 }
+
 .mainWrapper {
     padding-bottom: 80px;
 }

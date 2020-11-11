@@ -3,8 +3,35 @@ export const state = () => ({
   page: "home",
   prevent: false,
   client: {
-    reference: "500774 (R1779)",
-    username: "Mr Client Test"
+    reference: "",
+    title: "",
+    first_name: "",
+    last_name: "",
+    date_of_birth: "",
+    gender: "",
+    address: {
+      address_1: "",
+      postcode: ""
+    },
+    marital_status: "",
+    contact_details: [
+      {
+        phone_no: "",
+        type: "",
+        marketing_use: ""
+      },
+      {
+        phone_no: "",
+        type: "",
+        marketing_use: ""
+      }
+    ],
+    email: "",
+    residential_status: "",
+    employment_status: "",
+    occupation: "",
+    employer: "",
+    address_history: []
   },
   details: {
     changeIncome: false,
@@ -97,5 +124,15 @@ export const mutations = {
   },
   set_chat(state, val) {
     state.chat.push(val);
+  },
+  set_client(state, val){
+    state.client = val
   }
 };
+
+export const actions = {
+  updateUserData({ commit }, payload) {
+    console.log(payload)
+    commit("set_client", payload.client)
+  }
+}
