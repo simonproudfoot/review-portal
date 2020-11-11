@@ -17,7 +17,7 @@
                             <p class="mb-0"><b>Has you income changed?</b></p>
                         </b-col>
                         <b-col xs="4" class="text-right">
-                            <ToggleButton class="mb-0" color="#00a7bd" :sync="true" height="40" width="100" font-size="15" v-model="boxIncome" :labels="{checked: 'Yes', unchecked: 'No'}">
+                            <ToggleButton class="mb-0" color="#00a7bd" :sync="true" height="40" width="90" font-size="15" v-model="boxIncome" :labels="{checked: 'Yes', unchecked: 'No'}">
                             </ToggleButton>
                         </b-col>
                     </b-row>
@@ -43,10 +43,13 @@
                         </b-card-body>
                     </div>
                     <b-card-body>
-                        <label for="salary" class="pb-0 mb-0"><b>New Client salary</b></label>
+                        <label for="salary" class="pb-0 mb-0"><b>New partner salary</b></label>
                         <b-input-group size="sm" prepend="£" class="bg-white input-underlined">
-                            <b-form-input placeholder="Enter new salary"></b-form-input>
+                            <b-form-input placeholder="Enter new partner salary"></b-form-input>
                         </b-input-group>
+                        <b-form-group class="mt-4 mb-0" label="Is this on your bank statement?">
+                            <b-form-radio-group :options="options" name="radios-stacked" stacked></b-form-radio-group>
+                        </b-form-group>
                     </b-card-body>
                 </div>
             </b-card>
@@ -56,8 +59,8 @@
                         <p class="mb-0"><b>Has your Expanditure changed?</b></p>
                     </b-col>
                     <b-col xs="4" class="text-right">
-                        <b-form-checkbox size="lg" switch v-model="details.changedExpenditure">
-                        </b-form-checkbox>
+                        <ToggleButton class="mb-0" color="#00a7bd" :sync="true" height="40" width="90" font-size="15" v-model="details.changedExpenditure" :labels="{checked: 'Yes', unchecked: 'No'}">
+                        </ToggleButton>
                     </b-col>
                 </b-row>
             </b-card>
@@ -67,8 +70,8 @@
                         <p class="mb-0"><b>Has your Expanditure changed?</b></p>
                     </b-col>
                     <b-col xs="4" class="text-right">
-                        <b-form-checkbox size="lg" switch v-model="details.updatedIandE">
-                        </b-form-checkbox>
+                        <ToggleButton class="mb-0" color="#00a7bd" :sync="true" height="40" width="90" font-size="15" v-model="details.updatedIandE" :labels="{checked: 'Yes', unchecked: 'No'}">
+                        </ToggleButton>
                     </b-col>
                 </b-row>
             </b-card>

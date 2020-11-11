@@ -14,7 +14,6 @@
     <Nuxt />
 </div>
 </template>
-
 <script>
 import chat from "~/static/img/chat.svg?inline";
 export default {
@@ -23,27 +22,21 @@ export default {
     }
 }
 </script>
-
 <style lang="scss">
 @import 'assets/scss/custom.scss';
-
 html {
     overflow: scroll;
     overflow-x: hidden;
 }
-
 ::-webkit-scrollbar {
     width: 0px;
-    /* Remove scrollbar space */
     background: transparent;
 }
-
 .chatLogo {
     width: 24px;
     height: 24px;
     fill: $yellow;
 }
-
 .navbar {
     height: 48px !important;
     line-height: 48px;

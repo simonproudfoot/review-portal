@@ -31,7 +31,6 @@
 
 .slide-up-enter,
 .slide-up-leave-to {
-
     opacity: 0;
 }
 </style>
