@@ -14,7 +14,7 @@ export default {
   css: ['@/assets/scss/custom.scss'],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: ['~/plugins/icons.js',{ src: '~/plugins/filebase.js', mode: 'client' }], // only on client side],
+  plugins: [{ src: '~/plugins/toggle.js', ssr: false },{ src: '~/plugins/filebase.js', mode: 'client' }], // only on client side],
 
   module: {
     rules: [

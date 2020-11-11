@@ -30,7 +30,9 @@ body {
   font-family: "Open+Sans", sans-serif;
   font-weight: 400;
   line-height: 1.2em;
+  font-size: 15px;
 }
+
 b {
   font-weight: 700;
 }
@@ -62,81 +64,39 @@ main {
   padding: 0.3em 1em;
   font-weight: 700;
 }
-
-// switch
-.custom-switch.b-custom-control-lg::before {
-  font-size: 12px !important;
-}
-.custom-switch.b-custom-control-lg .custom-control-label::before,
-.input-group-lg .custom-switch .custom-control-label::before {
-  top: 0.313rem;
-  height: 2.6rem;
-  left: -2.812rem;
-  width: 5.5rem;
-  border-radius: 2rem;
-  background-color: $grey;
-  border-color: transparent;
-  content: "No";
-  padding: 8px 4px 4px 44px;
-  font-size: 16px !important;
-  text-align: left;
+.card-body {
+  padding: 0.7em;
 }
 
-// switch -- active
-.custom-switch.b-custom-control-lg
-  .custom-control-input:checked
-  ~ .custom-control-label::before,
-.input-group-lg
-  .custom-switch
-  .custom-control-input:checked
-  ~ .custom-control-label::before {
-  top: 0.313rem;
-  height: 2.6rem;
-  left: -2.812rem;
-  width: 5.5rem;
-  border-radius: 2rem;
-  background-color: $blue;
-  border-color: transparent;
-  content: "Yes";
-  padding-left: 4px;
-  font-size: 16px !important;
-  text-align: left;
-  padding: 8px 4px 4px 13px;
-}
-
-// switch knob - inactive
-.custom-switch.b-custom-control-lg .custom-control-label::after,
-.input-group-lg .custom-switch .custom-control-label::after {
-  top: calc(0.3125rem + 6px);
-  left: calc(-2.8125rem + 6px);
-  width: calc(2rem - 4px);
-  height: calc(2rem - 4px);
-  border-radius: 1.625rem;
-  background-size: 50% 50%;
-  background-color: $white;
-  box-shadow: $shadow;
-  text-align: left;
-}
-
-// switch knob - active
-.custom-switch.b-custom-control-lg
-  .custom-control-input:checked
-  ~ .custom-control-label::after,
-.input-group-lg
-  .custom-switch
-  .custom-control-input:checked
-  ~ .custom-control-label::after {
-  transform: translateX(2.938rem);
-}
-
-.custom-switch {
-  padding-right: 2.75rem !important;
-}
-
-.custom-control-label {
-  @media screen and (min-width: 505px) {
-    margin-top: -16px !important;
+.input-underlined {
+  input {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-color: $black;
+    border-radius: 0 !important;
   }
+  .input-group-prepend,
+  .input-group-text {
+    background-color: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-color: $black;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    font-weight: 700;
+  }
+}
+.v-switch-button {
+  width: 30px !important;
+  height: 30px !important;
+}
+
+.vue-js-switch .v-switch-core .v-switch-button {
+  top: 2px !important;
+  left: 2px !important;
+
 }
 
 .btn {
@@ -162,12 +122,7 @@ main {
 }
 
 .btn-accent:hover {
-
 }
-
-
-
-
 
 .btn-secondary {
   color: $black;
@@ -181,18 +136,20 @@ main {
   border-color: $black;
 }
 
-.bg-light{
+.bg-light {
   background-color: $grey !important;
 }
 
-
-.hide-scrollbar, html, body {
+.hide-scrollbar,
+html,
+body {
   /*FireFox*/
   scrollbar-width: none;
   /*IE10+*/
   -ms-overflow-style: -ms-autohiding-scrollbar;
 }
-.hide-scrollbar::-webkit-scrollbar, body::-webkit-scrollbar {
+.hide-scrollbar::-webkit-scrollbar,
+body::-webkit-scrollbar {
   /*Chrome, Safari, Edge*/
   display: none;
 }
