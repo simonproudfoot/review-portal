@@ -1,15 +1,11 @@
 <template>
 <div>
     <header>
-        <b-container>
-            <b-row>
-                <b-col cols="3">
-                    <b-img src="img/documents.svg" center fluid width="40"></b-img>
-                </b-col>
-                <b-col cols="9">
-                    <p class="mb-0"><b>Your documents</b></p>
-                </b-col>
-            </b-row>
+         <b-container>
+            <documents style="height: 40px; vertical-align: middle" class="d-inline-block mr-1" />
+            <div class="d-inline-block" style="vertical-align: middle">
+                <p class="mb-0"><b>Your documents</b></p>
+            </div>
         </b-container>
     </header>
     <main>
@@ -125,25 +121,23 @@
 <script>
 import iconPlus from "~/static/img/plus.svg?inline";
 import iconMinus from "~/static/img/minus.svg?inline";
+import documents from "~/static/img/documents.svg?inline";
 export default {
     data: function () {
         return {
             changed: false,
-            expMisc: true,
+            expMisc: false,
             expPartner: false,
             expBankStatement: false,
             filesMisc: [],
             filesPartner: [],
             filesBankStatment: [],
-            size: {
-                width: '100%',
-                height: 50
-            }
         }
     },
     components: {
         iconPlus,
-        iconMinus
+        iconMinus,
+        documents
     },
     methods: {
         saveChanges() {

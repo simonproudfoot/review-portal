@@ -8,12 +8,21 @@
             {{$store.getters.page}}
         </b-navbar-brand>
         <div class="ml-auto" v-if="$store.getters.page !== 'home'">
-            <b-img src="img/chat.svg" center fluid width="25"></b-img>
+            <chat class="chatLogo" />
         </div>
     </b-navbar>
     <Nuxt />
 </div>
 </template>
+
+<script>
+import chat from "~/static/img/chat.svg?inline";
+export default {
+    components: {
+        chat
+    }
+}
+</script>
 
 <style lang="scss">
 @import 'assets/scss/custom.scss';
@@ -27,11 +36,16 @@ html {
     width: 0px;
     /* Remove scrollbar space */
     background: transparent;
-    /* Optional: just make scrollbar invisible */
 }
 
-/* Optional: show position indicator in red */
-::-webkit-scrollbar-thumb {
-    background: #fff;
+.chatLogo {
+    width: 24px;
+    height: 24px;
+    fill: $yellow;
+}
+
+.navbar {
+    height: 48px !important;
+    line-height: 48px;
 }
 </style>

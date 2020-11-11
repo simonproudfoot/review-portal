@@ -2,14 +2,10 @@
 <div>
     <header>
         <b-container>
-            <b-row>
-                <b-col cols="3">
-                    <b-img src="img/review.svg" center fluid width="40"></b-img>
-                </b-col>
-                <b-col cols="9">
-                    <p class="mb-0"><b>Your details</b></p>
-                </b-col>
-            </b-row>
+            <review style="height: 40px; vertical-align: middle" class="d-inline-block mr-1" />
+            <div class="d-inline-block" style="vertical-align: middle">
+                <p class="mb-0"><b>Your details</b></p>
+            </div>
         </b-container>
     </header>
     <main>
@@ -49,16 +45,19 @@
             </b-card>
             <b-button block pill v-if="changed" @click="saveChanges">Confirm my change</b-button>
         </b-container>
-
     </main>
 </div>
 </template>
 <script>
+import review from "~/static/img/review.svg?inline";
 export default {
     data: function () {
         return {
             changed: false,
         }
+    },
+    components: {
+        review
     },
     methods: {
         saveChanges() {
@@ -72,7 +71,7 @@ export default {
         },
     },
     watch: {
-        changed(){
+        changed() {
             console.log('changed')
             this.$store.commit('set_prevent', true)
         },
@@ -84,14 +83,12 @@ export default {
         }
     },
     beforeDestroy() {
-        
         if (this.changed) {
             const answer = window.confirm('Do you really want to leave? you have unsaved changes!')
             if (answer) {
                 this.$store.commit('set_prevent', false)
-                
             } else {
-                  this.$store.commit('set_prevent', false)
+                this.$store.commit('set_prevent', false)
             }
         }
         //  this.changed == true ? this.saveModal = true : null

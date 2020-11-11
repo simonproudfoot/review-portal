@@ -2,24 +2,20 @@
 <div>
     <header>
         <b-container>
-            <b-row>
-                <b-col cols="3">
-                    <b-img src="img/user.svg" center fluid width="40"></b-img>
-                </b-col>
-                <b-col cols="9">
-                    <p class="mb-0">Hi, {{$store.getters.client.username}}</p>
-                    <p class="mb-0">ClientRef: {{$store.getters.client.reference}}</p>
-                </b-col>
-            </b-row>
+            <user style="height: 40px; vertical-align: middle" class="d-inline-block mr-1"/>
+            <div class="d-inline-block" style="vertical-align: middle">
+                <p class="mb-0">Hi, {{$store.getters.client.username}}</p>
+                <p class="mb-0">ClientRef: {{$store.getters.client.reference}}</p>
+            </div>
         </b-container>
     </header>
     <main>
         <b-container>
             <b-row>
                 <b-col cols="12">
-                    <b-card header="Client info" class="mb-4">
+                    <b-card header="Client info" class="mb-3">
                         <b-row>
-                            <b-col cols="12" class="text-center mb-5">
+                            <b-col cols="12" class="text-center mb-3">
                                 <p class="mb-0">Status</p>
                                 <h3>I&E completed</h3>
                             </b-col>
@@ -83,3 +79,11 @@
     </main>
 </div>
 </template>
+<script>
+import user from "~/static/img/user.svg?inline";
+export default {
+    components: {
+        user
+    }
+}
+</script>

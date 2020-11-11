@@ -16,7 +16,7 @@ $gradient: linear-gradient(
   #00a7bd
 );
 
-$shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+$shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
 $border: 10px;
 
 @import "bootstrap/scss/bootstrap.scss";
@@ -60,10 +60,10 @@ main {
   color: $white;
   text-align: center;
   padding: 0.3em 1em;
+  font-weight: 700;
 }
 
 // switch
-
 .custom-switch.b-custom-control-lg::before {
   font-size: 12px !important;
 }
@@ -186,13 +186,13 @@ main {
 }
 
 
-.hide-scrollbar {
+.hide-scrollbar, html, body {
   /*FireFox*/
   scrollbar-width: none;
   /*IE10+*/
   -ms-overflow-style: -ms-autohiding-scrollbar;
 }
-.hide-scrollbar::-webkit-scrollbar {
+.hide-scrollbar::-webkit-scrollbar, body::-webkit-scrollbar {
   /*Chrome, Safari, Edge*/
   display: none;
 }

@@ -4,12 +4,12 @@
         <transition-group name="pop">
             <template v-for="(message, i) in $store.getters.chat">
                 <div v-if="message.creator == 'agent'" class="chatField" :key="i">
-                    <div class="chatField__avatar chatField__avatar--agent"></div>
+                    <div class="chatField__avatar chatField__avatar--agent"><chat/></div>
                     <div class="chatField__bubble chatField__bubble--agent" v-html="message.message">
                     </div>
                 </div>
                 <div v-else class="chatField" :key="i">
-                    <div class="chatField__avatar chatField__avatar--user"></div>
+                    <div class="chatField__avatar chatField__avatar--user"><user/></div>
                     <div class="chatField__bubble chatField__bubble--user" v-html="message.message"> >
                     </div>
                 </div>
@@ -32,6 +32,8 @@
 import iconMinus from "~/static/img/minus.svg?inline";
 import iconPlus from "~/static/img/plus.svg?inline";
 import plane from "~/static/img/send.svg?inline";
+import chat from "~/static/img/chat.svg?inline";
+import user from "~/static/img/user.svg?inline";
 export default {
     data: function () {
         return {
@@ -42,7 +44,9 @@ export default {
     components: {
         plane,
         iconPlus,
-        iconMinus
+        iconMinus,
+        chat,
+        user
     },
     methods: {
         sendMessage() {
@@ -73,6 +77,7 @@ export default {
     height: calc(100vh - 160px);
     padding-top: 20px;
     overflow: auto;
+    font-size: 14px;
     &::after {
         position: absolute;
         top: 0;
@@ -164,16 +169,19 @@ export default {
         width: 30px;
         height: 30px;
         border-radius: 100%;
-        background-size: 55%;
-        background-repeat: no-repeat;
-        background-position: center;
+        svg{
+            width: 30px;
+            height: 30px;
+            padding: 5px;
+            fill: $white;
+        }
         &--user {
             right: 0;
-            background-image: url('~@/static/img/user.svg')
+         
         }
         &--agent {
             left: 0;
-            background-image: url('~@/static/img/chat.svg')
+           
         }
     }
     &__bubble {

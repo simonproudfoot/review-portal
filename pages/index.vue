@@ -11,6 +11,10 @@
 </template>
 
 <style lang="scss">
+
+.footer{
+    z-index: 100;
+}
 .mainWrapper {
     padding-bottom: 80px;
 }
