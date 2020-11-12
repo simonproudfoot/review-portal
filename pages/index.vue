@@ -18,8 +18,9 @@ export default {
     }) {
         try {
             // Get the user data
-            const data = await $axios.$get('http://localhost/www.reviewportal.co.uk/api/template_api.php')
-            store.dispatch('updateUserData', data)
+            const data = await $axios.$get('http://www.fssportal.co.uk/api/test_ls.php')
+          console.log(data)
+          //store.dispatch('updateUserData', data)
         }
         catch (err) {
             console.log(err)

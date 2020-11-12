@@ -45,10 +45,9 @@ export default {
   ],
 
   axios: {
-    proxy: true, // Can be also an object with default options
-    axios: { baseURL: 'http://localhost/www.reviewportal.co.uk/api'},
+    proxy: true,
+    baseURL: 'http://www.fssportal.co.uk/api/test_ls.php', // Used as fallback if no runtime config is provided
   },
-
 
   bootstrapVue: {
     bootstrapCSS: false,
