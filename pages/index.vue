@@ -9,7 +9,6 @@
     <footer-menu></footer-menu>
 </div>
 </template>
-
 <script>
 export default {
     async asyncData({
