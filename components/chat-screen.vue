@@ -174,6 +174,7 @@ export default {
 }
 .chatField {
     position: relative;
+    width: 100%;
     height: auto;
     margin-bottom: 1em;
     &__avatar {
