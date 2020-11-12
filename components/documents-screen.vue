@@ -34,7 +34,7 @@
                                 </li>
                             </ul>
                             <file-upload style="width: 100%" v-model="filesMisc" :multiple="true" @input-filter="inputFilter" @input-file="inputFile">
-                                <b-button pill block variant="accent">Upload document <b-icon class="ml-2" icon="cloud-upload" aria-hidden="true"></b-icon>
+                                <b-button pill block variant="accent">Upload document 
                                 </b-button>
                             </file-upload>
                             <b-row class="mt-3" v-for="(file, i) in $store.getters.documents.misc" :key="i">
@@ -67,7 +67,7 @@
                     <b-col cols="12" v-show="expPartner">
                         <div class="px-3 py-3">
                             <file-upload style="width: 100%" v-model="filesPartner" :multiple="true" @input-filter="inputFilter" @input-file="inputFile">
-                                <b-button pill block variant="accent">Upload document <b-icon class="ml-2" icon="cloud-upload" aria-hidden="true"></b-icon>
+                                <b-button pill block variant="accent">Upload document 
                                 </b-button>
                             </file-upload>
                             <b-row class="mt-3" v-for="(file, i) in $store.getters.documents.parterSalary" :key="i">
@@ -99,7 +99,7 @@
                     <b-col cols="12" v-show="expBankStatement">
                         <div class="px-3 py-3">
                         <file-upload style="width: 100%" v-model="filesBankStatment" :multiple="true" @input-filter="inputFilter" @input-file="inputFile">
-                                <b-button pill block variant="accent">Upload document <b-icon class="ml-2" icon="cloud-upload" aria-hidden="true"></b-icon>
+                                <b-button pill block variant="accent">Upload document 
                                 </b-button>
                             </file-upload>
                             <b-row class="mt-3" v-for="(file, i) in $store.getters.documents.bankStatement" :key="i">

@@ -101,6 +101,9 @@ export const getters = {
   details(state) {
     return state.details;
   },
+  documents(state) {
+    return state.documents;
+  },
   reference(state) {
     return state.reference;
   },
