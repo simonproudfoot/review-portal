@@ -16,12 +16,12 @@
             </template>
         </transition-group>
     </b-container>
-    <div class="chatEditor border" :style="chatEditor ? 'height:200px' : null">
+    <div class="chatEditor border" :style="chatEditor ? 'height:150px' : null">
         <button class="chatEditor__toggle" @click="chatEditor = !chatEditor">
             <iconPlus v-if="!chatEditor" />
             <iconMinus v-else />
         </button>
-        <textarea class="py-0" name="" id=""  :style="chatEditor ? 'height: 90%' : 'height: 22px'" placeholder="Type your message here" v-model.trim="newMessage" @click="chatEditor = true" v-on:keyup.enter="sendMessage"></textarea>
+        <textarea ref="textBox" class="py-0" :style="chatEditor ? 'height: 90%' : 'height: 22px'" placeholder="Type your message here" v-model.trim="newMessage" @click="chatEditor = true" v-on:keyup.enter="sendMessage"></textarea>
         <button class="chatEditor__send" @click="sendMessage" :style="newMessage.length >= 1 ? null : 'opacity:0.6'">
             <plane />
         </button>
@@ -57,6 +57,7 @@ export default {
                 }
                 this.$store.commit('set_chat', newMsg)
                 this.newMessage = ''
+                this.$refs.textBox.blur();
                 setTimeout(() => {
                     this.chatEditor = false
                     this.$refs.chatWindow.scrollTop = this.$refs.chatWindow.scrollHeight
@@ -76,7 +77,7 @@ export default {
 .chatWindow {
     height: calc(100vh - 160px);
     padding-top: 20px;
-    overflow: auto;
+    overflow-y: auto;
     font-size: 14px;
     &::after {
         position: absolute;
@@ -94,7 +95,7 @@ export default {
     position: fixed;
     bottom: 70px;
     height: 50px;
-    width: 90%;
+    width: calc(100% - 30px);
     left: 0;
     overflow: hidden;
     right: 0;
@@ -110,8 +111,9 @@ export default {
         left: 7px;
         position: absolute;
          svg {
-            width:20px;
-            height: 20px;
+            padding: 0;
+            height: auto;
+            width:100%;
             fill: $white;
             path {
                 fill: $white
@@ -128,7 +130,9 @@ export default {
         bottom: 7px;
         position: absolute;
         svg {
-            width:20px;
+            padding: 0;
+            height: auto;
+            width:100%;
             fill: $white;
             path {
                 fill: $white
@@ -170,18 +174,16 @@ export default {
         height: 30px;
         border-radius: 100%;
         svg{
-            width: 30px;
+            width: 100%;
             height: 30px;
             padding: 5px;
             fill: $white;
         }
         &--user {
             right: 0;
-         
         }
         &--agent {
             left: 0;
-           
         }
     }
     &__bubble {
