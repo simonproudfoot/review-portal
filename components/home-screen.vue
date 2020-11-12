@@ -5,7 +5,7 @@
             <user style="height: 40px; vertical-align: middle" class="d-inline-block mr-1"/>
             <div class="d-inline-block" style="vertical-align: middle">
                 <p class="mb-0">Hi, {{$store.getters.client.first_name}}</p>
-                <p class="mb-0">ClientRef: update me </p>
+                <p class="mb-0">ClientRef: {{$store.getters.reference}} </p>
             </div>
         </b-container>
     </header>

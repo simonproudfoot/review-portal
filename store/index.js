@@ -2,8 +2,8 @@ export const strict = false;
 export const state = () => ({
   page: "home",
   prevent: false,
+  reference: "",
   client: {
-    reference: "",
     title: "",
     first_name: "",
     last_name: "",
@@ -87,6 +87,7 @@ export const state = () => ({
     }
   ]
 });
+
 export const getters = {
   page(state) {
     return state.page;
@@ -100,13 +101,14 @@ export const getters = {
   details(state) {
     return state.details;
   },
-  documents(state) {
-    return state.documents;
+  reference(state) {
+    return state.reference;
   },
   chat(state) {
     return state.chat;
   }
 };
+
 export const mutations = {
   set_page(state, val) {
     if (state.prevent == false) {
@@ -127,12 +129,15 @@ export const mutations = {
   },
   set_client(state, val){
     state.client = val
+  },
+  set_reference(state, val){
+    state.reference = val
   }
 };
 
 export const actions = {
   updateUserData({ commit }, payload) {
-    console.log(payload)
     commit("set_client", payload.client)
-  }
+    commit("set_reference", payload.reference)
+  },
 }

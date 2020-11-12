@@ -17,7 +17,7 @@
                             <p class="mb-0"><b>Has you income changed?</b></p>
                         </b-col>
                         <b-col xs="4" class="text-right">
-                            <ToggleButton class="mb-0" color="#00a7bd" :sync="true" height="40" width="90" font-size="15" v-model="boxIncome" :labels="{checked: 'Yes', unchecked: 'No'}">
+                            <ToggleButton class="mb-0" color="#00a7bd" :sync="true" :height="40" :width="90" :font-size="15" v-model="boxIncome" :labels="{checked: 'Yes', unchecked: 'No'}">
                             </ToggleButton>
                         </b-col>
                     </b-row>
@@ -59,7 +59,7 @@
                         <p class="mb-0"><b>Has your Expanditure changed?</b></p>
                     </b-col>
                     <b-col xs="4" class="text-right">
-                        <ToggleButton class="mb-0" color="#00a7bd" :sync="true" height="40" width="90" font-size="15" v-model="details.changedExpenditure" :labels="{checked: 'Yes', unchecked: 'No'}">
+                        <ToggleButton class="mb-0" color="#00a7bd" :sync="true" :height="40" :width="90" :font-size="15" v-model="details.changedExpenditure" :labels="{checked: 'Yes', unchecked: 'No'}">
                         </ToggleButton>
                     </b-col>
                 </b-row>
@@ -70,7 +70,7 @@
                         <p class="mb-0"><b>Has your Expanditure changed?</b></p>
                     </b-col>
                     <b-col xs="4" class="text-right">
-                        <ToggleButton class="mb-0" color="#00a7bd" :sync="true" height="40" width="90" font-size="15" v-model="details.updatedIandE" :labels="{checked: 'Yes', unchecked: 'No'}">
+                        <ToggleButton class="mb-0" color="#00a7bd" :sync="true" :height="40" :width="90" :font-size="15" v-model="details.updatedIandE" :labels="{checked: 'Yes', unchecked: 'No'}">
                         </ToggleButton>
                     </b-col>
                 </b-row>
