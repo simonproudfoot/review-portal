@@ -111,12 +111,12 @@ export const getters = {
     return state.chat;
   }
 };
-
 export const mutations = {
   set_page(state, val) {
-    if (state.prevent == false) {
-      state.page = val;
-    }
+    // prevent page change if unsaved changes
+    //  if (state.prevent == false) {
+    state.page = val;
+    // }
   },
   set_prevent(state, val) {
     state.prevent = val;
@@ -130,17 +130,17 @@ export const mutations = {
   set_chat(state, val) {
     state.chat.push(val);
   },
-  set_client(state, val){
-    state.client = val
+  set_client(state, val) {
+    state.client = val;
   },
-  set_reference(state, val){
-    state.reference = val
+  set_reference(state, val) {
+    state.reference = val;
   }
 };
 
 export const actions = {
   updateUserData({ commit }, payload) {
-    commit("set_client", payload.client)
-    commit("set_reference", payload.reference)
-  },
-}
+    commit("set_client", payload.client);
+    commit("set_reference", payload.reference);
+  }
+};
