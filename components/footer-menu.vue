@@ -96,7 +96,6 @@ export default {
     bottom: 0;
     width: 100%;
     left: 0;
-    right: 0;
 
     &__menu {
         background-color: $darkblue;

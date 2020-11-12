@@ -1,21 +1,25 @@
 <template>
-<div>
-    <b-container ref="chatWindow" class="chatWindow hide-scrollbar" @click="chatEditor = false">
+<b-container>
+    <div ref="chatWindow" class="chatWindow hide-scrollbar" @click="chatEditor = false">
         <transition-group name="pop">
             <template v-for="(message, i) in $store.getters.chat">
                 <div v-if="message.creator == 'agent'" class="chatField" :key="i">
-                    <div class="chatField__avatar chatField__avatar--agent"><chat/></div>
+                    <div class="chatField__avatar chatField__avatar--agent">
+                        <chat />
+                    </div>
                     <div class="chatField__bubble chatField__bubble--agent" v-html="message.message">
                     </div>
                 </div>
                 <div v-else class="chatField" :key="i">
-                    <div class="chatField__avatar chatField__avatar--user"><user/></div>
+                    <div class="chatField__avatar chatField__avatar--user">
+                        <user />
+                    </div>
                     <div class="chatField__bubble chatField__bubble--user" v-html="message.message"> >
                     </div>
                 </div>
             </template>
         </transition-group>
-    </b-container>
+    </div>
     <div class="chatEditor border" :style="chatEditor ? 'height:150px' : null">
         <button class="chatEditor__toggle" @click="chatEditor = !chatEditor">
             <iconPlus v-if="!chatEditor" />
@@ -26,7 +30,7 @@
             <plane />
         </button>
     </div>
-</div>
+</b-container>
 </template>
 <script>
 import iconMinus from "~/static/img/minus.svg?inline";
@@ -81,7 +85,6 @@ export default {
     overflow-x: hidden;
     font-size: 14px;
     position: relative;
-
 }
 .chatEditor {
     transition-duration: 0.3s;
@@ -105,11 +108,17 @@ export default {
         bottom: 7px;
         left: 7px;
         position: absolute;
-         svg {
+        svg {
             padding: 0;
             height: 20px;
-            width:20px;
+            width: 18px;
             fill: $white;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
             path {
                 fill: $white
             }
@@ -127,8 +136,14 @@ export default {
         svg {
             padding: 0;
             height: 20px;
-            width:20px;
+            width: 18px;
             fill: $white;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
             path {
                 fill: $white
             }
@@ -168,7 +183,7 @@ export default {
         width: 30px;
         height: 30px;
         border-radius: 100%;
-        svg{
+        svg {
             width: 100%;
             height: 30px;
             padding: 5px;
