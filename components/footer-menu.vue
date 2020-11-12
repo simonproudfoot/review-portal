@@ -122,6 +122,7 @@ export default {
                     fill: $darkblue;
                     top: -24px;
                     height: 27px;
+                    z-index: -1;
                     path: {
                         fill: $darkblue;
                     }

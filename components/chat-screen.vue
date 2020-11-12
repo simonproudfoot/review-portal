@@ -75,18 +75,13 @@ export default {
 <style lang="scss">
 @import 'assets/scss/custom.scss';
 .chatWindow {
-    height: calc(100vh - 160px);
+    height: calc(100vh - 170px);
     padding-top: 20px;
     overflow-y: auto;
+    overflow-x: hidden;
     font-size: 14px;
-    &::after {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        width: 100%;
-        height: 1em;
-    }
+    position: relative;
+
 }
 .chatEditor {
     transition-duration: 0.3s;
@@ -112,8 +107,8 @@ export default {
         position: absolute;
          svg {
             padding: 0;
-            height: auto;
-            width:100%;
+            height: 20px;
+            width:20px;
             fill: $white;
             path {
                 fill: $white
@@ -131,8 +126,8 @@ export default {
         position: absolute;
         svg {
             padding: 0;
-            height: auto;
-            width:100%;
+            height: 20px;
+            width:20px;
             fill: $white;
             path {
                 fill: $white
