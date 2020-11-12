@@ -9,6 +9,7 @@
     <footer-menu></footer-menu>
 </div>
 </template>
+
 <script>
 export default {
     async asyncData({
@@ -16,7 +17,8 @@ export default {
         store
     }) {
         try {
-            const data = await $axios.$get('http://localhost/www.reviewportal.co.uk/api/test_ls.php')
+            // Get the user data
+            const data = await $axios.$get('http://localhost/www.reviewportal.co.uk/api/template_api.php')
             store.dispatch('updateUserData', data)
         }
         catch (err) {

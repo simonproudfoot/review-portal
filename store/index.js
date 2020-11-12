@@ -78,13 +78,9 @@ export const state = () => ({
   },
   chat: [
     {
-      creator: "user",
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,"
-    },
-    {
       creator: "agent",
-      message: "Sed ut perspiciatis unde omnis iste natus error"
-    }
+      message: "Hello, how can I help?"
+    },
   ]
 });
 

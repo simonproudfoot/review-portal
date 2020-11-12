@@ -10,14 +10,16 @@ export default {
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
 
-
-  //target:'static',
+  target: "static",
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: ['@/assets/scss/custom.scss'],
+  css: ["@/assets/scss/custom.scss"],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: [{ src: '~/plugins/toggle.js', ssr: false },{ src: '~/plugins/filebase.js', mode: 'client' }], // only on client side],
+  plugins: [
+    { src: "~/plugins/toggle.js", ssr: false },
+    { src: "~/plugins/filebase.js", mode: "client" }
+  ], // only on client side],
 
   module: {
     rules: [
@@ -37,14 +39,21 @@ export default {
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
     // https://go.nuxtjs.dev/bootstrap
-    '@nuxtjs/axios',
-    ['bootstrap-vue/nuxt'],
-
+    "@nuxtjs/axios",
+    "@nuxtjs/proxy",
+    ["bootstrap-vue/nuxt"]
   ],
+
+  axios: {
+    proxy: true, // Can be also an object with default options
+    axios: { baseURL: 'http://localhost/www.reviewportal.co.uk/api'},
+  },
+
+
   bootstrapVue: {
     bootstrapCSS: false,
-    bootstrapVueCSS: false
-
+    bootstrapVueCSS: false,
+    icons: false
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
