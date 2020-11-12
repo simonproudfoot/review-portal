@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="wrapper">
     <b-navbar>
         <b-navbar-brand v-if="$store.getters.page === 'home'" class="mx-auto" href="#">
             <b-img src="img/FSS-logo.svg" center fluid width="300"></b-img>
@@ -24,9 +24,10 @@ export default {
 </script>
 <style lang="scss">
 @import 'assets/scss/custom.scss';
-html {
+html, body, .wrapper {
     overflow: scroll;
     overflow-x: hidden;
+    max-width: 100%;
 }
 ::-webkit-scrollbar {
     width: 0px;
