@@ -67,7 +67,7 @@
             <b-card class="mb-4">
                 <b-row no-gutters>
                     <b-col xs="8">
-                        <p class="mb-0"><b>Has your Expanditure changed?</b></p>
+                        <p class="mb-0"><b>Have you updated your I&E?</b></p>
                     </b-col>
                     <b-col xs="4" class="text-right">
                         <ToggleButton class="mb-0" color="#00a7bd" :sync="true" :height="40" :width="90" :font-size="15" v-model="details.updatedIandE" :labels="{checked: 'Yes', unchecked: 'No'}">
