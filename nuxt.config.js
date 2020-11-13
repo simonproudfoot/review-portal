@@ -4,13 +4,13 @@ export default {
     title: "review-portal",
     meta: [
       { charset: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "viewport", content: "width=device-width, user-scalable=no" },
       { hid: "description", name: "description", content: "" }
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
 
-  target: "static",
+  //target: "static",
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: ["@/assets/scss/custom.scss"],
