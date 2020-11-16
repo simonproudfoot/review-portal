@@ -4,34 +4,17 @@ export const state = () => ({
   prevent: false,
   reference: "",
   client: {
-    title: "",
-    first_name: "",
-    last_name: "",
-    date_of_birth: "",
-    gender: "",
-    address: {
-      address_1: "",
-      postcode: ""
-    },
-    marital_status: "",
-    contact_details: [
-      {
-        phone_no: "",
-        type: "",
-        marketing_use: ""
-      },
-      {
-        phone_no: "",
-        type: "",
-        marketing_use: ""
-      }
-    ],
-    email: "",
-    residential_status: "",
-    employment_status: "",
-    occupation: "",
-    employer: "",
-    address_history: []
+    ClientID: null,
+    ClientTitle: '',
+    ClientForename: '',
+    ClientSurname: '',
+    Client_LS_Group: '',
+    Split_Ref: "",
+    TypeLeadSourceDescription: ""
+  },
+  proof: {
+    proof_required_count: null,
+    proof_received_count: null,
   },
   details: {
     changeIncome: false,
@@ -105,6 +88,9 @@ export const getters = {
   },
   chat(state) {
     return state.chat;
+  },
+  proof(state) {
+    return state.proof
   }
 };
 export const mutations = {
@@ -124,19 +110,28 @@ export const mutations = {
     state.documents = val;
   },
   set_chat(state, val) {
-    state.chat.push(val);
+    //  state.chat.push(val);
+    state.chat = val;
   },
   set_client(state, val) {
     state.client = val;
   },
   set_reference(state, val) {
     state.reference = val;
-  }
+  },
+  set_proof(state, val) {
+    state.proof = val;
+  },
 };
 
 export const actions = {
   updateUserData({ commit }, payload) {
-    commit("set_client", payload.client);
-    commit("set_reference", payload.reference);
+    commit("set_client", payload.group[0]);
+    commit("set_proof", payload.proof_received[0]);
+  },
+  updateChatData({ commit }, payload) {
+    console.log('gotIt')
+    commit("set_chat", payload.group);
   }
+
 };

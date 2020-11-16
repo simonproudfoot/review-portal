@@ -4,8 +4,8 @@
         <b-container>
             <user style="height: 40px; vertical-align: middle" class="d-inline-block mr-1"/>
             <div class="d-inline-block" style="vertical-align: middle">
-                <p class="mb-0">Hi, {{$store.getters.client.first_name}}</p>
-                <p class="mb-0">ClientRef: {{$store.getters.reference}} </p>
+                <p class="mb-0">Hi, {{$store.getters.client.ClientTitle}} {{$store.getters.client.ClientSurname}}</p>
+                <p class="mb-0">ClientRef: {{$store.getters.client.ClientID}} </p>
             </div>
         </b-container>
     </header>

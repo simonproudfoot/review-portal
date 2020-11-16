@@ -3,7 +3,7 @@
     <div ref="chatWindow" class="chatWindow hide-scrollbar" @click="chatEditor = false">
         <transition-group name="pop">
             <template v-for="(message, i) in $store.getters.chat">
-                <div v-if="message.creator == 'agent'" class="chatField" :key="i">
+                <div v-if="message.from_id !== $store.getters.client.ClientID" class="chatField" :key="i">
                     <div class="chatField__avatar chatField__avatar--agent">
                         <chat />
                     </div>
